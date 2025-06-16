@@ -8,6 +8,7 @@ int main(){
 			i *= 2;
 		}
 	return 0;
+	}
 }
 
 // Do phuc tap ve thoi gian: O(log n) 
