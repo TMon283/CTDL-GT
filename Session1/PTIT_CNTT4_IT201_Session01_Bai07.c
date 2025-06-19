@@ -7,7 +7,7 @@ int main() {
     for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++) {
         for (int j = i + 1; j < sizeof(array)/sizeof(array[0]); j++) {
             if (array[i] == array[j]) {
-                result = 0;
+                result = 1;
             }
         }
     }
@@ -23,16 +23,16 @@ int main() {
     }
     for (int i = 1; i < sizeof(array)/sizeof(array[0]); i++) {
         if (array[i] == array[i+1] || array[i] == array[i-1]) {
-            result = 0;
+            result = 1;
         }
     }
     // Cach 3: Do phuc tap thuat toan: O(n)
     int array2[100] = {0};
-    for  (int i = 0; i < sizeof(array)/sizeof(array[0]); i++) {
+    for (int i = 0; i < sizeof(array)/sizeof(array[0]); i++) {
         array2[array[i]]++;
-    }
-    if (array2[array] > 1) {
-        result = 0;
+        if (array2[array] > 1) {
+            result = 1;
+        }
     }
     return 0;
 }
