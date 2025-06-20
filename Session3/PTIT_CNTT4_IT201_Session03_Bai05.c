@@ -30,14 +30,8 @@ int main() {
             int mainDiagonal = 0;
             int minorDiagonal = 0;
             for (int i = 0; i < rows; i++) {
-                for (int j = 0; j < cols; j++) {
-                    if (i == j) {
-                        mainDiagonal += arr[i][i];
-                    }
-                    if (i + j == cols - 1) {
-                        minorDiagonal += arr[i][j];
-                    }
-                }
+                mainDiagonal += arr[i][i];
+                minorDiagonal += arr[i][cols - 1 - i];
             }
             printf("Tong duong cheo chinh = %d\n", mainDiagonal);
             printf("Tong duong cheo phu = %d\n", minorDiagonal);

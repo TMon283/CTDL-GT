@@ -36,5 +36,5 @@ void findMostFrequent(int arr[], int size) {
             maxFrequentCount = count;
         }
     }
-    printf("Output: 6%d", maxFrequentElement);
+    printf("Output: %d", maxFrequentElement);
 }
