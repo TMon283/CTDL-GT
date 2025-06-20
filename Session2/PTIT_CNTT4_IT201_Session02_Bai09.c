@@ -7,7 +7,7 @@ int main() {
     int size;
     printf("Enter the size of array: ");
     scanf("%d", &size);
-    if (size < 0) {
+    if (size <= 0) {
         printf("Invalid input");
         return 1;
     }
