@@ -26,7 +26,11 @@ int main() {
                 count++;
             }
         }
-        printf("Average = %d", (sum/count));
+        if (count == 0) {
+            printf("Khong ton tai so chan trong mang");
+        } else {
+            printf("Average = %d", (sum/count));
+        }
         free(arr);
     }
     return 0;
