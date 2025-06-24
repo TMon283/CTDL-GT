@@ -27,6 +27,7 @@ int main() {
             }
         }
         printf("Average = %d", (sum/count));
+        free(arr);
     }
     return 0;
 }

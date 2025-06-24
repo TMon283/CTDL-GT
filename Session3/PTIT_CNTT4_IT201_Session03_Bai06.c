@@ -19,6 +19,7 @@ int main() {
     scanf("%d", &m);
     if (m < 0) {
         printf("So luong phan tu khong hop le");
+        free(arr);
         return 0;
     }
     arr = (int*)realloc(arr, (n + m) * sizeof(int));
