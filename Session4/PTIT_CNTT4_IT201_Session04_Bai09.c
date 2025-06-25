@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 void bubbleSort(int arr[], int size);
-int binarySearch(int arr[], int size, int target, int min, int max);
+int binarySearch(int arr[], int target, int min, int max);
 
 int main() {
     int size, target;
@@ -21,7 +21,7 @@ int main() {
     scanf("%d", &target);
     int min = 0;
     int max = size - 1;
-    int result = binarySearch(arr, size, target, min, max);
+    int result = binarySearch(arr, target, min, max);
     if (result == -1) {
         printf("Element not found");
     } else {
@@ -43,15 +43,15 @@ void bubbleSort(int arr[], int size) {
     }
 }
 
-int binarySearch(int arr[], int size, int target, int min, int max) {
+int binarySearch(int arr[], int target, int min, int max) {
     while (min <= max) {
         int mid = (min + max) / 2;
         if (arr[mid] == target) {
             return mid;
         } else if (arr[mid] > target) {
-            return binarySearch(arr, size, target, min, mid - 1);
+            return binarySearch(arr, target, min, mid - 1);
         } else {
-            return binarySearch(arr, size, target, mid + 1, max);
+            return binarySearch(arr, target, mid + 1, max);
         }
     }
     return -1;
