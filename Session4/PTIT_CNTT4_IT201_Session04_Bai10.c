@@ -11,15 +11,17 @@ int main() {
     int size;
     printf("Enter the number of students:");
     scanf("%d", &size);
+    getchar();
     struct Student arr[size];
     int id = 1;
     for (int i = 0; i < size; i++) {
         arr[i].id = id;
         id++;
         printf("Enter student name:");
-        scanf("%s", arr[i].name);
+        fgets(arr[i].name, 20, stdin);
         printf("Enter student age:");
         scanf("%d", &arr[i].age);
+        getchar();
     }
     char keyword[10];
     printf("Enter the keyword:");
@@ -28,9 +30,7 @@ int main() {
         if (strstr(strlwr(arr[i].name), strlwr(keyword)) == NULL) {
             continue;
         } else {
-            printf("Student ID:%d\n", arr[i].id);
-            printf("Student name:%s\n", arr[i].name);
-            printf("Student age:%d\n", arr[i].age);
+            printf(" id:%d\n name:%s age:%d\n\n", arr[i].id, arr[i].name, arr[i].age);
         }
     }
     return 0;
