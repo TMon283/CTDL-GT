@@ -22,6 +22,10 @@ int main() {
         printf("Enter student age:");
         scanf("%d", &arr[i].age);
         getchar();
+        if (arr[i].age < 0) {
+            printf("Invalid input");
+            return 0;
+        }
     }
     char keyword[10];
     printf("Enter the keyword:");

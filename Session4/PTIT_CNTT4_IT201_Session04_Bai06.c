@@ -24,6 +24,10 @@ int main() {
         scanf("%s", &arr[i].name);
         printf("Enter student age:");
         scanf("%d", &arr[i].age);
+        if (arr[i].age < 0) {
+            printf("Invalid input");
+            return 0;
+        }
     }
     printf("Enter student ID you want to found:");
     scanf("%d", &target);
