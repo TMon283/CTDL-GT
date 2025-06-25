@@ -12,6 +12,10 @@ int main() {
         return 0;
     }
     int *arr = (int*)malloc(size*sizeof(int));
+    if (arr == NULL) {
+        printf("Memory allocation error");
+        return 0;
+    }
     for (int i = 0; i < size; i++) {
         printf("arr[%d]=", i);
         scanf("%d", &arr[i]);
