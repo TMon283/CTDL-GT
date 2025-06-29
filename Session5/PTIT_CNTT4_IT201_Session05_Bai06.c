@@ -27,6 +27,6 @@ int main() {
 }
 
 int sumOfArray(int arr[], int size) {
-    if (size == 0) return 0;
+    if (size == 0) return arr[0];
     return arr[size - 1] + sumOfArray(arr, size - 1);
 }
