@@ -47,15 +47,25 @@ Node* deleteEnd(Node* head) {
     return head;
 }
 
+void printList(Node* head) {
+    int i = 1;
+    Node* current = head;
+    while (current != NULL) {
+        printf("Node %d:%d\n",i++, current->data);
+        current = current->next;
+    }
+}
+
 Node* deleteAt(Node* head, int index) {
-    if (index > getLength(head) || index < 0) {
-        printf("Index is out of range");
+    int length = getLength(head);
+    if (index >= length || index < 0) {
+        printf("Index is out of range\n");
         return head;
     }
     if (index == 0) {
         return deleteHead(head);
     }
-    if (index == getLength(head) - 1) {
+    if (index == length - 1) {
         return deleteEnd(head);
     }
     Node* current = head;
@@ -66,16 +76,8 @@ Node* deleteAt(Node* head, int index) {
     Node* next = deleteNode->next;
     current->next = next;
     free(deleteNode);
+    printList(head);
     return head;
-}
-
-void printList(Node* head) {
-    int i = 1;
-    Node* current = head;
-    while (current != NULL) {
-        printf("Node %d:%d\n",i++, current->data);
-        current = current->next;
-    }
 }
 
 int main() {
@@ -95,6 +97,5 @@ int main() {
     printf("Please enter index to delete:");
     scanf("%d",&index);
     deleteAt(head, index);
-    printList(head);
     return 0;
 }

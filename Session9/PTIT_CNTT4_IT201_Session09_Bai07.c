@@ -40,6 +40,15 @@ Node* insertEnd(Node* head, int value) {
     return head;
 }
 
+void printList(Node* head) {
+    int i = 1;
+    Node* current = head;
+    while (current != NULL) {
+        printf("Node %d:%d\n",i++, current->data);
+        current = current->next;
+    }
+}
+
 
 Node* insertAt(Node* head, int value, int position) {
     if (position > getLength(head) || position < 0) {
@@ -59,16 +68,8 @@ Node* insertAt(Node* head, int value, int position) {
     Node* newNode = createNode(value);
     newNode->next = current->next;
     current->next = newNode;
+    printList(head);
     return head;
-}
-
-void printList(Node* head) {
-    int i = 1;
-    Node* current = head;
-    while (current != NULL) {
-        printf("Node %d:%d\n",i++, current->data);
-        current = current->next;
-    }
 }
 
 int main() {
@@ -90,6 +91,5 @@ int main() {
     printf("Enter position to be inserted:");
     scanf("%d", &position);
     head = insertAt(head, value, position);
-    printList(head);
     return 0;
 }
