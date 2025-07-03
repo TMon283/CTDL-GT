@@ -55,5 +55,11 @@ int main() {
     printf("\n");
     printf("after:");
     printNode(head);
+    Node* current = head;
+    while (current != NULL) {
+        Node* temp = current;
+        current = current->next;
+        free(temp);
+    }
     return 0;
 }

@@ -57,5 +57,11 @@ int main() {
     scanf("%d", &n);
     head = deleteValue(head, n);
     printNode(head);
+    Node* current = head;
+    while (current != NULL) {
+        Node* temp = current;
+        current = current->next;
+        free(temp);
+    }
     return 0;
 }

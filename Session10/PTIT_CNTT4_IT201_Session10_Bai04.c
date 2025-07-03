@@ -49,5 +49,11 @@ int main() {
 
     head = deleteEnd(head);
     printNode(head);
+    Node* current = head;
+    while (current != NULL) {
+        Node* temp = current;
+        current = current->next;
+        free(temp);
+    }
     return 0;
 }

@@ -26,5 +26,11 @@ int main() {
     node3->next = node4;
     node4->next = NULL;
 
+    Node* current = head;
+    while (current != NULL) {
+        Node* temp = current;
+        current = current->next;
+        free(temp);
+    }
     return 0;
 }
