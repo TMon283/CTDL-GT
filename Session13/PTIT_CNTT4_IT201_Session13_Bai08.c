@@ -45,6 +45,7 @@ int evaluatePostfix(char expr[]) {
     Stacks s = createStack(10);
     for (int i = 0; expr[i] != '\0'; i++) {
         char c = expr[i];
+        if (c == ' ') continue;
         if (c >= '0' && c <= '9') {
             push(&s, c - '0');
         } else {
