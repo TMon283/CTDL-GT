@@ -39,7 +39,8 @@ int pop(stack *s) {
 
 void printStack(stack *s) {
     if (isEmpty(s)) {
-        printf("Empty");
+        printf("Empty\n");
+        return;
     }
     Node* temp = s->top;
     printf("stack ={\n");
@@ -52,7 +53,7 @@ void printStack(stack *s) {
 
 int peek(stack *s) {
     if (isEmpty(s)) {
-        printf("Empty");
+        printf("Empty\n");
         return -1;
     }
     return s->top->data;

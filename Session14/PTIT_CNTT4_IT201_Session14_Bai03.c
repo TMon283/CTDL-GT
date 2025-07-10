@@ -40,6 +40,7 @@ int pop(stack *s) {
 void printStack(stack *s) {
     if (isEmpty(s)) {
         printf("Empty");
+        return;
     }
     Node* temp = s->top;
     while (temp != NULL) {
