@@ -20,14 +20,13 @@ int isEmpty(stack* s) {
 
 void push(stack *s,int value) {
     Node* newNode = (Node*)malloc(sizeof(Node));
-    newNode->data = value;
     newNode->next = s->top;
     s->top = newNode;
 }
 
 int pop(stack *s) {
     if (isEmpty(s)) {
-        printf("Rong");
+        printf("Empty\n");
         return -1;
     }
     Node* temp = s->top;
@@ -39,7 +38,7 @@ int pop(stack *s) {
 
 void printStack(stack *s) {
     if (isEmpty(s)) {
-        printf("Empty");
+        printf("Empty\n");
         return;
     }
     Node* temp = s->top;
