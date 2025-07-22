@@ -61,6 +61,13 @@ int isEmpty(Queue* q) {
     return q->front == NULL;
 }
 
+int exists(Node* root, int value) {
+    if (!root) return 0;
+    if (root->data == value) return 1;
+    return exists(root->left, value) || exists(root->right, value);
+}
+
+
 void insertNodeToBinaryTree(Node* root, int value) {
     if (root == NULL) return;
     Queue* q = createQueue();
@@ -68,6 +75,10 @@ void insertNodeToBinaryTree(Node* root, int value) {
 
     while (!isEmpty(q)) {
         Node* current = dequeue(q);
+        if (exists(root, value)) {
+            printf("Gia tri %d da ton tai\n", value);
+            return;
+        }
         if (current->left == NULL) {
             current->left = createNode(value);
             break;
