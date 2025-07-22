@@ -71,13 +71,12 @@ void insertNodeToBinaryTree(Node* root, int value) {
     if (root == NULL) return;
     Queue* q = createQueue();
     enqueue(q, root);
-
+    if (exists(root, value)) {
+        printf("Gia tri %d da ton tai\n", value);
+        return;
+    }
     while (!isEmpty(q)) {
         Node* current = dequeue(q);
-        if (exists(root, value)) {
-            printf("Gia tri %d da ton tai\n", value);
-            return;
-        }
         if (current->left == NULL) {
             current->left = createNode(value);
             break;
